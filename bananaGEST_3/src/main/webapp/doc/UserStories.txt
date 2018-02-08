@@ -1,0 +1,95 @@
+GRUPO 3
+
+INTEGRANTES
+
+Bibiana Vizoso
+Enrique Ruiz
+Jose Manuel Lizana
+Borja Herranz
+
+HISTORIAS DE USUARIO Y CRITERIOS DE ACEPTACIÓN
+
+1- Como usuario de la aplicación BananaGEST, quiero introducir mi usuario y contraseña para poder acceder a mi página principal.
+
+		Dado un usuario que se identifica correctamente,
+		cuando intenta acceder a la página principal,
+		entonces se le redirige automáticamente a su página principal.
+
+		Dado un usuario que se identifica de manera incorrecta,
+		cuando intenta acceder a la página principal,
+		entonces se le manda un mensaje de error y se le redirige automaticamente a la página de LogIn.
+	
+2- Como usuario de la aplicación BananaGEST, quiero poder visualizar mi lista de tareas en la página principal, para proceder a la realización 
+de las mismas.
+
+		Dado un usuario que se identifica correctamente,
+		cuando clica en Crear Tarea,
+		entonces se le redirige a la página de creación de tarea.
+
+		Dado un usuario que se identifica correctamente,
+		cuando clica en Crear Proyecto,
+		entonces se le redirige a la página de creación de proyecto.
+
+		Dado un usuario que se identifica correctamente,
+		cuando clica en Editar Tarea,
+		entonces se le redirige a la página de tareas, con todos los campos rellenos y listos para ser editados.
+
+		Dado un usuario que se identifica correctamente,
+		cuando clica en el Proyecto Asignado,
+		entonces se le redirige a la página de proyectos, con todos los campos rellenos y listos para ser editados.
+
+3- Como usuario de la aplicación BananaGEST, quiero crear tareas para poder añadirlas a mi Lista de Tareas y visualizarlas en la página principal.
+
+		Dado un usuario identificado en BananaGest,
+		cuando el usuario rellena todos los campos del formulario de creacion de tarea y clica el boton de Crear Tarea,
+		entonces se le manda un mensaje de notificacion de confirmación, se le redirige a su página principal y
+ 		se guardan los datos en la base de datos.
+
+		Dado un usuario identificado en BananaGest,
+		cuando el usuario no rellena alguno de los campos obligatorios del formulario,
+		entonces se le manda una notificacion, y se le redirecciona a la página de creación de tareas.
+
+4- Como usuario de la aplicación BananaGEST, quiero crear proyectos para poder añadirlos a mi base de datos.
+
+		Dado un usuario identificado en BananaGest,
+		cuando el usuario rellena todos los campos del formulario de creacion de proyecto y clica el boton de Crear Proyecto,
+		entonces se le manda un mensaje de notificacion de confirmación y se le redirige a su página principal.
+
+		Dado un usuario identificado en BananaGest,
+		cuando el usuario no rellena alguno de los campos obligatorios del formulario,
+		entonces se le manda una notificacion, y se le redirecciona a la página de creación de proyectos.
+
+5- Como usuario de la aplicación BananaGEST, quiero editar tareas, para modificarlas en mi Lista de Tareas de la página principal.
+
+		Dado un usuario identificado en BananaGest,
+		cuando el usuario modifica alguno o ninguno de los campos de la página de editar tarea,
+		entonces se le manda un mensaje de notificacion de confirmación, se le redirige a su página principal y
+		se guardan las modificaciones en la base de datos.
+
+6- Como usuario de la aplicación BananaGEST, quiero editar proyectos, para poder modificarlos en mi base de datos.
+
+		Dado un usuario identificado en BananaGest,
+		cuando el usuario modifica alguno o ninguno de los campos de la página de editar proyecto,
+		entonces se le manda un mensaje de notificacion de confirmación y se le redirige a su página principal.
+
+7- Como usuario de la aplicación BananaGEST, quiero pinchar en LogOut, para poder salir de la aplicación.
+
+		Dado un usuario identificado,
+		cuando el usuario se encuentra en su página principal,
+		entonces puede clicar en el enlace LogOut, salir de la aplicacion y recibir un mensaje de desconexión satisfactoria.
+
+		Dado un usuario identificado,
+		cuando el usuario se encuentra en la página de creación de tareas,
+		entonces puede clicar en el enlace LogOut, salir de la aplicacion y recibir un mensaje de desconexión satisfactoria.
+
+		Dado un usuario identificado,
+		cuando el usuario se encuentra en la página de creación de proyectos,
+		entonces puede clicar en el enlace LogOut, salir de la aplicacion y recibir un mensaje de desconexión satisfactoria.
+
+		Dado un usuario identificado,
+		cuando el usuario se encuentra en la página de editar tarea,
+		entonces puede clicar en el enlace LogOut, salir de la aplicacion y recibir un mensaje de desconexión satisfactoria.
+
+		DDado un usuario identificado,
+		cuando el usuario se encuentra en la página de editar proyectos,
+		entonces puede clicar en el enlace LogOut, salir de la aplicacion y recibir un mensaje de desconexión satisfactoria.

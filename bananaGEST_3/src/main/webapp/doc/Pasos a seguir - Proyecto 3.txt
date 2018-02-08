@@ -1,0 +1,40 @@
+Proyecto:
+
+Mismos pasos que el anterior, pero añadir:
+
+1) Realizar un LogOut
+2) Cada vez que haga una petición, ir a Spring para coger un modelo de usuario y autenticar. Luego ver si está en la base de datos, y comprobar si está en la base de datos para autenticar.
+3) Implementar Spring e Hibernate en el proyecto, y borrar los Servlets
+4) Se creará tareas, y proyectos.
+5) Se creará lista de tareas, se editará las tareas, se creará un proyecto, y se podrá asignar una tarea al proyecto.
+
+Esta es la funcionalidad mínima del proyecto. Luego crear proyecto y demás (es decir, la funcionalidad del proyecto), es un extra.
+
+BONUS:
+
+- Crear proyecto y editar
+- Crear API REST y que me devuelva los datos en JSON. Que me muestre el listado de tareas (/task) y (/task/{idtask}) devuelve una tarea al usuario. Uno es la lista de tareas, y otro te muestra una tarea por ID.
+- Un devuelve html y lo pinta, y el otro devuelve JSON, que lo puede recibir otra API.
+
+FUNCIONALIDADES
+
+1- Rescatar el proyecto. Primero crearemos un GIT, enlazamos nuestro nuevo proyecto. Primero comprobar los datos.
+2- Pasar todos los archivos servlet a Spring e Hibernate. Quitar el pool de configuraciones. Rescatar los jsp y verificar que se puede encajar con el anterior proyecto.
+3- La base de datos hay que crearla o en su defecto, recogerla del ordenador. Entonces como va a ser local, uno se encarga de que la base de datos tenga los campos correctos y no tocarlo.
+4- Otro tiene que crear las historias de usuario, con los criterios de aceptación.
+5- Generar el Swagger y mostrarlos en la presentación. Generar el API Rest para User y Tarea
+6- Crear diagrama y comprobar que se corresponde con nuestro proyecto. 
+7- Rescatar el Mockup.
+8- Arreglar el front: css, jsp.
+9- Toda la lógica de negocio, que está en servlet, cambiarlo a Spring e Hibernate.
+10- Falta crear tarea, editar tarea y crear proyecto y editar proyecto. Asociar tareas a proyectos.
+
+
+PRESENTACIÓN
+
+1- La primera parte, una introducción de qué es BananaGEST y que se supone que debe hacer.
+2- Luego la segunda parte, algo de información de las historias de usuario.
+3- Esquema de la aplicación.
+3- Mostrar las tecnologías que se usan, por qué se utilizan: control de versiones GIT, Hibernate, Spring, Eclipse como IDE, J2EE.
+4- Mostrar con pantallazos y con explicaciones lo que va a realizar el programa en el navegador.
+5- Conclusiones.
