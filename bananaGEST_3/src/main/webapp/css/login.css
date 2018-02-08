@@ -1,0 +1,54 @@
+@charset "ISO-8859-1";
+
+html{
+	background-image: url(https://wallpaperlayer.com/img/2015/9/abstract-orange-wallpaper-1450-1583-hd-wallpapers.jpg); 
+	position: relative;
+	opacity: 85%;
+	background-color: none;
+}
+
+header{
+	margin-bottom: 5%;
+	border-bottom: solid;
+}
+
+.row{
+	text-align: center;
+}
+
+main{
+	margin-top: 8%;
+}
+
+.alinear{
+	padding-right: 1%;
+	vertical-align: text-top;
+}
+
+.intro_user{
+	padding: 1%; 
+}
+
+.password{
+	text-decoration: underline;
+	font-size: 1.1em;
+}
+
+a{
+	text-decoration: none;
+	color: #2593EE;
+}
+
+.buttom {
+	width: 25%;
+}
+
+footer{
+	background: #A04000;
+	color:white;
+	position:fixed;
+   	left:0px;
+  	bottom:0px;
+   	height:20px;
+   	width:100%;
+}

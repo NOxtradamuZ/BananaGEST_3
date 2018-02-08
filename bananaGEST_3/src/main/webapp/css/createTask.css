@@ -1,0 +1,75 @@
+html {
+	font-family: verdana arial;
+	font-style: normal;
+	text-decoration: none;
+	color: black;
+	position: relative;
+	background-image: url(https://wallpaperlayer.com/img/2015/9/abstract-orange-wallpaper-1450-1583-hd-wallpapers.jpg); 
+	opacity: 85%;
+	background-color: none;
+}
+
+header{
+    margin-bottom: 5%;
+    border-bottom: solid;
+}
+
+.head{
+	display: inline-table;
+	width: 33%;
+	text-align: center;
+}
+
+h2{
+	text-align: center;
+}
+
+#basic{
+	margin-left: 20%;
+	padding: 5px;
+}
+
+.namecontent{
+	display: inline-block;
+	text-align: left;
+	vertical-align: middle;
+}
+
+.contenttable{
+	text-align: left;
+	margin-left: 25%;
+	padding: 5px;
+}
+
+.contentcontenttable{
+	padding: 10px;
+}
+
+a{
+	text-decoration: none;
+	color: #2593EE;
+}
+#boton{
+	position: relative;	
+	text-align: center;
+ }
+
+input {
+	padding: 8px;
+	margin: 5px;
+}
+
+footer{
+    text-align: center;
+    background: #A04000;
+    color:white;
+    position:fixed;
+    left:0px;
+    bottom:0px;
+    height:20px;
+    width:100%;
+}
+
+input:visited {
+	color: purple;
+}
