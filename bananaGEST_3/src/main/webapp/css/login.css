@@ -16,6 +16,12 @@ header{
 	text-align: center;
 }
 
+.in_form {
+    text-align: right;
+    margin-right: 42%;
+    margin-top: 2%;
+}
+
 .error {
     background-color: #DCDCDC;
     color : red;

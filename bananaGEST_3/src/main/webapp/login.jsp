@@ -22,13 +22,15 @@
 					<form action="login" method="POST" id="formulario">
 						<p class="error">${error}</p>
 						<p class="disconnect">${disconnect}</p>
-						<div class="intro_user">
-							<img class="alinear" src="img/name.png"/>
-							<input type="text" name="email" placeholder="Email" required="true" autofocus/>
-						</div>
-						<div class="intro_user">
-							<img class="alinear" src="img/padlock.png"/>
-							<input type="password" name="password" placeholder="Password" maxlength="12" minlength="4" required="true"/>
+						<div class= in_form>
+							<div class="intro_user">
+								<img class="alinear" src="img/name.png"/>
+								<input type="text" name="email" placeholder="Email" required="true" autofocus/>
+							</div>
+							<div class="intro_user">
+								<img class="alinear" src="img/padlock.png"/>
+								<input type="password" name="password" placeholder="Password" maxlength="12" minlength="4" required="true"/>
+							</div>
 						</div>
 						<div class="intro_user">
 						<a class="password" href="#">He olvidado mi contraseña</a>
