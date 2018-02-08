@@ -2,6 +2,7 @@ package com.generation.jwd.servlets;
 
 import java.io.IOException;
 import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -27,12 +28,9 @@ import com.generation.jwd.beans.Project;
 public class ProjectServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
     
-	private Connection conn;
+	private Connection connection;
 	private ResultSet rs;
 	private PreparedStatement stmt;
-	private Context initContext;
-	private Context envContext;
-	private DataSource ds;	
  
     public ProjectServlet() {
         super();
@@ -40,25 +38,19 @@ public class ProjectServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		try {
-			Class.forName("com.mysql.jdbc.Driver");
-		} catch (ClassNotFoundException e) {
-			System.out.println("Where is your MySQL JDBC Driver?");
-			e.printStackTrace();
-			return;
-		}
-	
-		Context initContext = null;
-		Context envContext = null;
 		Map <Integer, String> users = new HashMap <Integer, String>();
 	
+		String url = "jdbc:mysql://127.0.0.1:3306/banana_gest_3";
+        String user = "root";
+        String password1 = "Enrique123";
+        
 		try {
 		
-			initContext = new InitialContext();
-			envContext = (Context)initContext.lookup("java:/comp/env");
-			ds = (DataSource)envContext.lookup("jdbc/banana_gest_new");
-			conn = (Connection) ds.getConnection();
-			stmt = (PreparedStatement)conn.prepareStatement("SELECT id, name FROM user order by name asc");	
+			Class.forName("com.mysql.jdbc.Driver").newInstance();
+			
+	        connection = DriverManager.getConnection(url, user, password1);
+			
+			stmt = (PreparedStatement)connection.prepareStatement("SELECT id, name FROM user order by name asc");	
 			rs = stmt.executeQuery();
 		
 			while(rs.next()) {
@@ -68,11 +60,18 @@ public class ProjectServlet extends HttpServlet {
 		
 			rs.close();
 			stmt.close();
-			conn.close();
+			connection.close();
 		
 		} catch (SQLException e) {		
 			e.printStackTrace();
-		} catch (NamingException e) {
+		} catch (InstantiationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IllegalAccessException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	
@@ -94,14 +93,17 @@ public class ProjectServlet extends HttpServlet {
 				+ "(id, name, date_start, date_end, description, id_user)"
 				+ "VALUES(?, ?, ?, ?, ?, ?)";
 		
+		String url = "jdbc:mysql://127.0.0.1:3306/banana_gest_3";
+        String user = "root";
+        String password1 = "Enrique123";
+		
 		try {
 				
-			initContext = new InitialContext();
-			envContext = (Context)initContext.lookup("java:/comp/env");
-			ds = (DataSource)envContext.lookup("jdbc/banana_gest_new");
-			conn = (Connection) ds.getConnection();			
+			Class.forName("com.mysql.jdbc.Driver").newInstance();
+			
+	        connection = DriverManager.getConnection(url, user, password1);	
 				
-			stmt = (PreparedStatement)conn.prepareStatement(q);				
+			stmt = (PreparedStatement)connection.prepareStatement(q);				
 			stmt.setInt(1, project.getId());
 			stmt.setString(2, project.getName());
 			stmt.setString(3, project.getDate_start());
@@ -111,11 +113,18 @@ public class ProjectServlet extends HttpServlet {
 			stmt.executeUpdate();
 				
 			stmt.close();
-			conn.close();
+			connection.close();
 					
 		    } catch (SQLException e) {
 				e.printStackTrace();
-			} catch (NamingException e) {
+			} catch (InstantiationException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (IllegalAccessException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (ClassNotFoundException e) {
+				// TODO Auto-generated catch block
 				e.printStackTrace();
 			} finally {
 		    }

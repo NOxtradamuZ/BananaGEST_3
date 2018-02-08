@@ -2,6 +2,7 @@ package com.generation.jwd.servlets;
 
 import java.io.IOException;
 import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -33,31 +34,24 @@ public class HomeServlet extends HttpServlet {
    
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		try {
-			Class.forName("com.mysql.jdbc.Driver");
-		} catch (ClassNotFoundException e) {
-			System.out.println("Where is your MySQL JDBC Driver?");
-			e.printStackTrace();
-			return;
-		}
-		
 		Connection connection = null;
 		PreparedStatement stmt = null;
 		ResultSet rs = null;
-		Context initContext = null;
-		Context envContext = null;
-		DataSource datasource = null;
 		ArrayList<Task> taskList = new ArrayList<Task>();
 		Task myTask ;
 		HttpSession session = (HttpSession)request.getSession();
 		int user_id = (Integer)session.getAttribute("id_user");
 
+		String url = "jdbc:mysql://127.0.0.1:3306/banana_gest_3";
+        String user = "root";
+        String password1 = "Enrique123";
 		
 		try {
-			initContext = new InitialContext();
-			envContext = (Context)initContext.lookup("java:/comp/env");
-			datasource = (DataSource)envContext.lookup("jdbc/banana_gest_new");
-			connection = (Connection) datasource.getConnection();
+				        
+	        Class.forName("com.mysql.jdbc.Driver").newInstance();
+			
+	        connection = DriverManager.getConnection(url, user, password1);
+	        
 			stmt = (PreparedStatement)connection.prepareStatement("SELECT * FROM task WHERE id_user = ?");
 			stmt.setInt(1,user_id );
 			rs = stmt.executeQuery();		
@@ -79,7 +73,14 @@ public class HomeServlet extends HttpServlet {
 			connection.close();
 		} catch (SQLException e) {
 			e.printStackTrace();
-		} catch (NamingException e) {
+		} catch (InstantiationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IllegalAccessException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}	
 		request.setAttribute("taskList",taskList);

@@ -16,6 +16,21 @@ header{
 	text-align: center;
 }
 
+.error {
+    background-color: #DCDCDC;
+    color : red;
+    text-size : 1.5em;
+    margin-left : 20%;
+    margin-right : 20%;
+}
+.disconnect {
+    background-color: #DCDCDC;
+    color : green;
+    text-size : 1.5em;
+    margin-left : 20%;
+    margin-right : 20%;
+}
+
 main{
 	margin-top: 8%;
 }
@@ -23,6 +38,10 @@ main{
 .alinear{
 	padding-right: 1%;
 	vertical-align: text-top;
+}
+
+.row{
+	text-align: center;
 }
 
 .intro_user{
