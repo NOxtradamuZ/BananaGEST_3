@@ -20,6 +20,8 @@
 				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 					<img id= "bananas" src="img/banana.png" width="100" height="90"/>
 					<form action="login" method="POST" id="formulario">
+						<p class="error">${error}</p>
+						<p class="disconnect">${disconnect}</p>
 						<div class="intro_user">
 							<img class="alinear" src="img/name.png"/>
 							<input type="text" name="email" placeholder="Email" required="true" autofocus/>
@@ -49,9 +51,9 @@
 				</div>
 			</div>
 		</main>
-		<footer class="container-fluid">
-			<div class="row">
-				<span class="col-xs-12 col-sm-12 col-md-12 col-lg-12">Banana GEST - Todos los derechos reservados</span>
+		<footer>
+			<div>
+				<span>Banana GEST - Todos los derechos reservados</span>
 			</div>
 		</footer>
 	</body>
